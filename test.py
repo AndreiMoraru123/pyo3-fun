@@ -3,7 +3,7 @@ import time
 from typing import Callable
 
 from count import count_approx_py, count_exact_py
-from count_rs import count_approx_rs
+from count_rs import count_approx_rs, count_approx_rs_opt
 
 
 def timeit(f: Callable, *args, **kwargs):
@@ -22,3 +22,4 @@ print("approx", count_approx_py(WORDS))
 timeit(count_exact_py, WORDS)
 timeit(count_approx_py, WORDS)
 timeit(count_approx_rs, WORDS)
+timeit(count_approx_rs_opt, WORDS)
