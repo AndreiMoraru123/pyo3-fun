@@ -9,5 +9,9 @@ name = "count_rs"
 crate-type = ["cdylib"]
 
 [dependencies]
+nohash-hasher = "0.2.0"
 pyo3 = "0.22.0"
-rand = "0.8.5"
+rand = { version = "0.8.5", features = ["small_rng"] }
+
+[profile.release]
+lto = true
